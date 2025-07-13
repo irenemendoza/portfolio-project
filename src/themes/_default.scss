@@ -1,9 +1,17 @@
 @use '../abstracts/variables' as v;
 
 html * {
-    font-family: v.$roboto-font;
+    a {
+        text-decoration: none;
+    }
+
+    ul {
+        list-style: none;
+    }
+    
 }
  
 body {
     overflow-x: hidden;
 } 
+
