@@ -1,0 +1,37 @@
+@use '../abstracts/variables' as v;
+
+h1 {
+    color: v.$white;
+    font-family: v.$primary-font;
+    line-height: 1;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: v.$white;
+    font-family: v.$primary-font;
+    line-height: 1.2;
+    font-size: 2.2rem;
+}
+
+h3 {
+    color: v.$white;
+    font-family: v.$primary-font;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+h4 {
+    color: v.$white;
+    font-family: v.$primary-font;
+    font-size: 1.6rem;
+    font-weight: 500;
+}
+
+p {
+    color: v.$gray;
+    font-family: v.$primary-font;
+    line-height: 1.4;
+    font-size: 1rem;
+    font-weight: 300;
+}

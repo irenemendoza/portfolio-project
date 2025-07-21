@@ -4,13 +4,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Base Vite Project Sass</title>
+  <title>Portfolio design example</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 </head>
 
 <body>
-  <h1>
-    Esto es una prueba!</h1>
+  <header class="main_header">
+    <div class="container">
+      <section class="navbar">
+        <a href="#">
+          <img src="img/logo-adamkeyes.svg" alt="Logo" class="logo">
+        </a>
+        <nav class="contact_menu">
+          <ul>
+            <li>
+              <a href="#"><img src="img/github-icon.svg" alt="Github"></a>
+            </li>
+            <a href="#"><img src="img/dontknow-icon.svg" alt="Dontknow"></a>
+            </li>
+            <a href="#"><img src="img/linkedin-icon.svg" alt="LinkedIn"></a>
+            </li>
+            <a href="#"><img src="img/x-icon.svg" alt="X"></a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+      <section class="hero">
+        <div class="hero_img">
+          <img src="img/hero-img.png" alt="Hero image">
+        </div>
+        <div class="hero_content">
+          <h1 class="hero-title">Nice to meet you! I'm <span>Adam Keyes.</span></h1>
+          <p class="hero-text">Based in the UK, I’m a front-end developer passionate about building accessible web apps
+            that users love.</p>
+          <a href="#" class="button">CONTACT ME</a>
+        </div>
+      </section>
+    </div>
+  </header>
+  <main class="portfolio">
+    <div class="container">
+      <section class="knowledge">
+        <div class="know1">
+          <h3>HTML</h3>
+          <p>4 Years Experience</p>
+        </div>
+        <div class="know2">
+          <h3>CSS</h3>
+          <p>4 Years Experience</p>
+        </div>
+        <div class="know3">
+          <h3>JavaScript</h3>
+          <p>4 Years Experience</p>
+        </div>
+        <div class="know4">
+          <h3>Accessibility</h3>
+          <p>4 Years Experience</p>
+        </div>
+        <div class="know5">
+          <h3>React</h3>
+          <p>3 Years Experience</p>
+        </div>
+        <div class="know6">
+          <h3>Sass</h3>
+          <p>3 Years Experience</p>
+        </div>
+      </section>
+      <section class="projects">
+        <div class="projects_header">
+          <h2>Projects</h2>
+          <a href="#" class="button">CONTACT ME</a>
+        </div>
+        <div class="projects_content">
+          <article class="projects_content_item1">
+            <img src="img/project1.jpg" alt="Project 1">
+            <h4>DESIGN PORTFOLIO</h4>
+            <div class="item_language">
+              <p>HTML</p>
+              <p>CSS</p>
+            </div>
+            <div class="links">
+              <a href="#" class="button">VIEW PROJECT</a>
+              <a href="#" class="button">VIEW CODE</a>
+            </div>
+          </article>
+          <article class="projects_content_item2">
+            <img src="img/project2.jpg" alt="Project 2">
+            <h4>E-LEARNING LANDING PAGE</h4>
+            <div class="item_language">
+              <p>HTML</p>
+              <p>CSS</p>
+            </div>
+            <div class="links">
+              <a href="#" class="button">VIEW PROJECT</a>
+              <a href="#" class="button">VIEW CODE</a>
+            </div>
+          </article>
+          <article class="projects_content_item3">
+            <img src="img/project3.jpg" alt="Project 3">
+            <h4>TODO WEB APP</h4>
+            <div class="item_language">
+              <p>HTML</p>
+              <p>CSS</p>
+              <p>JAVASCRIPT</p>
+            </div>
+            <div class="links">
+              <a href="#" class="button">VIEW PROJECT</a>
+              <a href="#" class="button">VIEW CODE</a>
+            </div>
+          </article>
+          <article class="projects_content_item4">
+            <img src="img/project4.jpg" alt="Project 4">
+            <h4>ENTERTAINMENT WEB APP</h4>
+            <div class="item_language">
+              <p>HTML</p>
+              <p>CSS</p>
+              <p>JAVASCRIPT</p>
+            </div>
+            <div class="links">
+              <a href="#" class="button">VIEW PROJECT</a>
+              <a href="#" class="button">VIEW CODE</a>
+            </div>
+          </article>
+          <article class="projects_content_item5">
+            <img src="img/project5.jpg" alt="Project 5">
+            <h4>MEMORY GAME</h4>
+            <div class="item_language">
+              <p>HTML</p>
+              <p>CSS</p>
+              <p>JAVASCRIPT</p>
+            </div>
+            <div class="links">
+              <a href="#" class="button">VIEW PROJECT</a>
+              <a href="#" class="button">VIEW CODE</a>
+            </div>
+          </article>
+          <article class="projects_content_item6">
+            <img src="img/project6.jpg" alt="Project 6">
+            <h4>ART GALLERY SHOWCASE</h4>
+            <div class="item_language">
+              <p>HTML</p>
+              <p>CSS</p>
+              <p>JAVASCRIPT</p>
+            </div>
+            <div class="links">
+              <a href="#" class="button">VIEW PROJECT</a>
+              <a href="#" class="button">VIEW CODE</a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </div>
+  </main>
+  <footer>
+    <div class="container">
+      <section class="footer_header">
+        <h2>Contact</h2>
+        <p>I would love to hear about your project and how I could help. Please fill in the form, and I’ll get back to
+          you as soon as possible.</p>
+        <form action="#">
+          <label for="name">NAME</label>
+          <input type="text" id="name" placeholder="NAME" name="name">
+          <label for="mail">EMAIL</label>
+          <input type="email" id="mail" placeholder="EMAIL" name="mail">
+          <label for="message">MESSAGE</label>
+          <textarea id="message" name="message" placeholder="MESSAGE"></textarea>
+          <a href="#" class="button" id="send-message">SEND MESSAGE</a>
+        </form>
+      </section>
+      <section class="footer_footer">
+        <a href="#">
+          <img src="img/logo-adamkeyes.svg" alt="Logo" class="logo">
+        </a>
+        <nav class="contact_menu">
+          <ul>
+            <li>
+              <a href="#"><img src="img/github-icon.svg" alt="Github"></a>
+            </li>
+            <a href="#"><img src="img/dontknow-icon.svg" alt="Dontknow"></a>
+            </li>
+            <a href="#"><img src="img/linkedin-icon.svg" alt="LinkedIn"></a>
+            </li>
+            <a href="#"><img src="img/x-icon.svg" alt="X"></a>
+            </li>
+          </ul>
+        </nav>
+      </section>
+    </div>
+  </footer>
   <script type="module" src="/main.js"></script>
+  <script>
+    document.getElementById('enviar-formulario').addEventListener('click', function (e) {
+      e.preventDefault(); // Evita que el enlace navegue
+      document.getElementById('mi-formulario').submit(); // Envía el formulario
+    });
+  </script>
 </body>
 
 </html>

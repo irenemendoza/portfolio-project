@@ -1,0 +1,67 @@
+@use '../abstracts/variables' as v;
+
+main {
+    background-color: v.$black;
+    padding-bottom: 1rem;
+    background-image: url('../img/bg-ellipse-right.svg');
+    background-repeat: no-repeat;
+    background-position: right top 36rem;
+    background-size: 45%;
+}
+.portfolio {
+    .container {
+        .knowledge {
+            display: flex;
+            padding: 2.5rem 0;
+            flex-direction: column;
+            gap: 2rem;
+            border-top: 1px solid v.$white;
+            border-bottom: 1px solid v.$white;
+            div {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 0.2rem;
+            }
+        }
+        .projects {
+            padding-top: 4rem;
+            padding-bottom: 3rem;
+            &_header{
+               display: flex;
+               align-items: center;
+               justify-content: space-between; 
+               margin-bottom: 2.5rem;
+            }
+            &_content{
+                display: flex;
+                flex-direction: column;
+                article {
+                    img {
+                    width: 100%;
+                    margin-bottom: 1rem;
+                    }
+                    h4 {
+                        margin-bottom: 0.6rem;
+                    }
+                    .item_language {
+                        margin-bottom: 1.8rem;
+                        display: flex;
+                        gap: 1rem;
+                        p {
+                            font-size: 1.2rem;
+                            letter-spacing: -0.08rem;
+                        }
+                    }
+                    .links {
+                        margin-bottom: 3rem;
+                        display: flex;
+                        gap: 2rem;
+                    }
+
+                }
+                            
+            }
+        }
+    }
+}
