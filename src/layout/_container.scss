@@ -1,7 +1,15 @@
 @use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
 
 .container {
     padding-left: 16px;
     padding-right: 16px;
-    max-width: 767px;
+    @include m.breakpoint(tablet) {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+    @include m.breakpoint(desktop) {
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }

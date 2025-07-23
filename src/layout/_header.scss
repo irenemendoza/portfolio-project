@@ -1,14 +1,30 @@
 @use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
 
 header {
     padding-top: 1rem;
-    margin-bottom: 5.5rem;
+    margin-bottom: 4.5rem;
     background-color: v.$black;
     background-image: url('../img/bg-ellipse.svg'), url('../img/bg-circle.svg');
     background-repeat: no-repeat;
     background-size: 45%, 15%;
-    background-position: left top 12rem, right top 17rem;
+    background-position: left top 9rem, right top 18rem;
 
+    @include m.breakpoint(tablet) {
+        padding: 0;
+        background-image: url('../img/hero-img-tablet.png'), url('../img/bg-ellipse.svg');
+        background-repeat: no-repeat;
+        background-size: 45%, 33%;
+        background-position: right bottom, left top 6.7rem;
+    }
+
+    @include m.breakpoint(desktop) {
+        height: 100vh;
+        background-image: url('../img/bg-ellipse-icon-left-desktop.svg'), url('../img/bg-circle-icon-desktop.svg'), url('../img/hero-img-desktop.png');
+        background-repeat: no-repeat;
+        background-size: 28%, 9%, 33%;
+        background-position: left top 24%, right 42% bottom 27%, right 15% top;
+    }
     .navbar {
     display: flex;
     flex-direction: column;
@@ -16,11 +32,39 @@ header {
     gap: 1rem;
     padding: 1.5rem;
     margin-bottom: 2rem;
+
+    @include m.breakpoint(tablet) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 3rem 0;
+    }
     
+    .logo {
+        @include m.breakpoint(tablet) {
+            width: 120%;
+        }
+    }
     .contact_menu ul {
             display: flex;
             flex-direction: row;
             gap: 1.5rem;
+            @include m.breakpoint(tablet) {
+                gap: 2.8rem;
+            }
+            @include m.breakpoint(desktop) {
+                padding-right: 2rem;
+                gap: 2.5rem;
+            }
+            li a svg {
+                @include m.breakpoint(tablet) {
+                    width: 120%;
+                    transition: color 0.3s, fill 0.3s;
+                    color: v.$white;
+                    &:hover {
+                        color: v.$green;
+                    }
+                }
+            }
     }
 }
 
@@ -31,12 +75,33 @@ header {
     text-align: center;
     color: v.$white;
     gap: 2rem;
+
+    @include m.breakpoint(tablet) {
+        text-align: left;
+        width: 70%;
+    }
+
+    @include m.breakpoint(desktop) {
+        width: 68%;
+        position: relative;
+    }
+    
+    &_img {
+        @include m.breakpoint(tablet) {
+            display: none;
+        }
+
+        
+    }
     
     &_content {
         h1{
             margin-bottom: 2rem;
-            position: relative;;
-            span::after {
+            position: relative;
+            .br_tablet {
+                display: none;
+            }
+            span.name::after {
                 content: '';
                 display: inline-block;
                 background-color: v.$green;
@@ -46,10 +111,44 @@ header {
                 left: 25%;
                 bottom: -0.1em;
             }
+            @include m.breakpoint(tablet) {
+                padding: 3.5rem 0;
+                margin-bottom: 0;
+                .br_tablet {
+                    display: inline;
+                }
+                span.name::after {
+                    left: 0;
+                    bottom: 3rem;
+                    width: 81%;
+                    height: 8px;
+                }
+            
+            }
+            @include m.breakpoint(desktop) {
+                padding-top: 2rem;
+                padding-bottom: 2.7rem;
+                .br_tablet {
+                    display: none;
+                }
+                span.name::after {
+                    left: 7.8rem;
+                    bottom: 2.5rem;
+                    width: 63%;
+                    height: 6px;
+                }
+            }
         }
 
         p{
             margin-bottom: 2rem;
+            @include m.breakpoint(tablet) {
+                width: 90%;
+            }
+            @include m.breakpoint(desktop) {
+                width: 55%;
+                margin-bottom: 3.8rem;
+            }
         }
     }
 }

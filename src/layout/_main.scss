@@ -1,46 +1,150 @@
 @use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
 
 main {
     background-color: v.$black;
     padding-bottom: 1rem;
     background-image: url('../img/bg-ellipse-right.svg');
     background-repeat: no-repeat;
-    background-position: right top 36rem;
+    background-position: right top 39rem;
     background-size: 45%;
+    @include m.breakpoint(tablet) {
+        background-image: url('../img/bg-ellipse-right.svg');
+        background-position: right top 26rem;
+        background-size: 27%;
+    }
+    @include m.breakpoint(desktop) {
+        background-image: url('../img/bg-ellipse-icon-right-desktop.svg');
+        background-position: right top 10%;
+        background-size: 20%;
+    }
 }
 .portfolio {
     .container {
         .knowledge {
             display: flex;
-            padding: 2.5rem 0;
+            padding: 3rem 0;
             flex-direction: column;
             gap: 2rem;
             border-top: 1px solid v.$white;
             border-bottom: 1px solid v.$white;
+            @include m.breakpoint(tablet) {
+                flex-direction: row;
+                flex-wrap: wrap;
+                gap: 3.5rem;
+                border-bottom: none;
+            }
+            @include m.breakpoint(desktop) {
+                flex-wrap: wrap;
+                gap: 2.5rem;
+            }
             div {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                gap: 0.2rem;
+                gap: 0.5rem;
+                @include m.breakpoint(tablet) {
+                    width: 40%;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: start;
+                    gap: 1rem;
+                }
+                @include m.breakpoint(desktop) {
+                    width: 30%;
+                    gap: 0.5rem;
+                }
             }
         }
         .projects {
             padding-top: 4rem;
-            padding-bottom: 3rem;
+            padding-bottom: 4rem;
             &_header{
                display: flex;
                align-items: center;
                justify-content: space-between; 
-               margin-bottom: 2.5rem;
+               margin-bottom: 3.5rem;
             }
             &_content{
                 display: flex;
                 flex-direction: column;
+                @include m.breakpoint(tablet) {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    row-gap: 2.5rem;
+                }
                 article {
+                    @include m.breakpoint(tablet) {
+                        width: 48%;
+                    }
+                    @include m.breakpoint(desktop) {
+                        position: relative;
+                        &:hover img{
+                            filter:brightness(0.5);
+                            cursor: pointer;
+                            }
+
+                        &:hover .img-overlay {
+                            opacity: 1;
+                            cursor: pointer;
+                        }
+
+                        &:hover .links {
+                            display: flex;
+                            flex-direction: column;
+                            opacity: 1;
+                        }
+                    }
+                    .img-overlay {
+                        display: none;
+                        @include m.breakpoint(desktop) {
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            background-color: rgba(0, 0, 0, 0.95);
+                            opacity: 0;
+                            transition: opacity 0.3s;   
+                            z-index: 1;
+                        }
+                    }
+                    .links {
+                        margin-bottom: 3rem;
+                        display: flex;
+                        gap: 2rem;
+                        @include m.breakpoint(tablet) {
+                            flex-direction: row;
+                            justify-content: space-between;
+                            padding: 3rem 0;
+                        }
+                        @include m.breakpoint(desktop) {
+                            display: none;
+                            position: absolute;
+                            top: -10%;
+                            left: 0;
+                            width: 100%;
+                            height: 100%;
+                            z-index: 2;
+                            justify-content: center;
+                            align-items: center;
+                            opacity: 1;
+                        }
+                    }
                     img {
                     width: 100%;
                     margin-bottom: 1rem;
+                    @include m.breakpoint(desktop) {
+                        width: 100%;
+                        height: auto;
+                        display: block;
+                        transition: filter 0.3s;
+                        }
                     }
+
+                
                     h4 {
                         margin-bottom: 0.6rem;
                     }
@@ -53,12 +157,10 @@ main {
                             letter-spacing: -0.08rem;
                         }
                     }
-                    .links {
-                        margin-bottom: 3rem;
-                        display: flex;
-                        gap: 2rem;
-                    }
+                    
 
+                        
+                    
                 }
                             
             }
