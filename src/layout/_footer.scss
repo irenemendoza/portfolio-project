@@ -60,6 +60,7 @@ footer {
                     flex-direction: column;
                     gap: 1.5rem;
                     padding-bottom: 5.5rem;
+                    position: relative;
                     @include m.breakpoint(desktop) {
                         width: 80%;
                     }
@@ -116,10 +117,30 @@ footer {
                         color: red;
                         font-size: 0.9rem;
                         margin-top: 0.2rem;
+                        position: absolute;
+                        right: 0;
+                        bottom: -1rem;
                     }
                     .input-error {
                         border-bottom: 2px solid red !important;
                     }
+
+                    .input-wrapper {
+                        position: relative;
+                        width: 100%;
+                        margin-left: auto;
+                    }
+
+                .input-icon {
+                    position: absolute;
+                    left: 95%; // ajusta según el diseño
+                    color: v.$white; // o el color que prefieras
+                }
+
+.input-error + .error-message {
+  text-align: right;
+}
+
                 }
             }    
         .footer_footer {
