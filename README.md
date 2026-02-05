@@ -1,6 +1,6 @@
 # Portfolio
 
-🔗 [Live Demo](https://tu-usuario.github.io/nombre-repo/)
+🔗 [Live Demo] https://irenemendoza.github.io/portfolio-project/
 
 A responsive portfolio website showcasing interactive hover effects and modern CSS techniques.
 
