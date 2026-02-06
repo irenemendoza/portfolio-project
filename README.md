@@ -6,8 +6,7 @@ A responsive personal portfolio built following a Figma design, with a mobile-fi
 
 ## 📸 Preview
 
-![Desktop View](./docs/portfolio-project-tablet-view.png)
-![Mobile View](./docs/portfolio-project-desktop-view.png)
+![Desktop View](./docs/portfolio-project-desktop-view.png)
 
 ### Interactive Demo
 
