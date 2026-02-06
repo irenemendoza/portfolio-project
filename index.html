@@ -204,13 +204,9 @@
           <label for="mail">EMAIL</label>
           <div class="input-wrapper">
             <span class="input-icon">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="11.5" stroke="#FF6F5B" />
-                <rect x="11" y="6" width="2" height="9" rx="1" fill="#FF6F5B" />
-                <rect x="11" y="17" width="2" height="2" rx="1" fill="#FF6F5B" />
-              </svg>
+              <img id="error-icon" src="/img/error-icon.svg" alt="">
             </span>
-            <input type="email" id="mail" placeholder="EMAIL" name="mail" required>
+            <input type="email" id="mail" placeholder="EMAIL" name="mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
             <span class="error-message" id="email-error"></span>
           </div>
           <label for="message">MESSAGE</label>
@@ -276,16 +272,20 @@
       const email = document.getElementById('mail');
       const emailError = document.getElementById('email-error');
       const sendBtn = document.getElementById('send-message');
+      const errorIcon = document.getElementById('error-icon');
+      const inputWrapper = document.querySelector('.input-wrapper');
 
       sendBtn.addEventListener('click', function (e) {
+        e.preventDefault();
         if (!email.checkValidity()) {
-          e.preventDefault();
           emailError.textContent = 'Sorry, invalid format here';
           email.classList.add('input-error');
+          errorIcon.style.display = 'block';
           email.focus();
         } else {
           emailError.textContent = '';
           email.classList.remove('input-error');
+          errorIcon.style.display = 'none';
         }
       });
 
@@ -293,6 +293,7 @@
         if (email.checkValidity()) {
           emailError.textContent = '';
           email.classList.remove('input-error');
+          errorIcon.style.display = 'none';
         }
       });
     });

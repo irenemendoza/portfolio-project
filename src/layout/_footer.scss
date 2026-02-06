@@ -145,20 +145,24 @@ footer {
                         position: relative;
                         width: 100%;
                         margin-left: auto;
+                        
+                        
                     }
 
-                .input-icon {
-                    position: absolute;
-                    left: 95%; // ajusta según el diseño
-                    color: v.$white; // o el color que prefieras
-                }
+                    
+                    #error-icon {
+                        position: absolute;
+                        left: 95%; // ajusta según el diseño
+                        color: v.$white; // o el color que prefieras
+                        display: none; // oculto por defecto
+                    }
 
-.input-error + .error-message {
-  text-align: right;
-}
-
+                    .input-error + .error-message {
+                        text-align: right;
+                    }
                 }
             }    
+
         .footer_footer {
             display: flex;
             flex-direction: column;
